@@ -46,7 +46,7 @@ const Home = () => {
                 fontWeight="extrabold"
               >
                 <Heading fontSize={{ base: "22px", md: "36px", lg: "42px" }}>
-                  Título del Home
+                  Bienvenido!
                 </Heading>
               </Text>
               <Text
@@ -55,7 +55,8 @@ const Home = () => {
                 fontSize={{ base: "16px", md: "24px", lg: "36px" }}
                 py="10px"
               >
-                Hola, este es un subtítulo
+                Explora el mundo al aire libre con nosotros: ¡equipando tus
+                aventuras!
               </Text>
               <GridItem py={10}>
                 <Button

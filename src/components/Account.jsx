@@ -51,7 +51,7 @@ const Account = () => {
                 </ListItem>
                 <ListItem>
                   <ListIcon fontSize={25} as={MdEventSeat} />
-                  Más comodidad.
+                  Comodidad.
                 </ListItem>
               </List>
             </Box>

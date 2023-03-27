@@ -20,22 +20,18 @@ const CartItem = ({ data, delFromCart }) => {
       {!titulo ? (
         <h2>No items in cart</h2>
       ) : (
-        <Box px={4}>
+        <Box px={2}>
           <Flex flexDirection="row">
             <Flex flexDirection="column">
-              <Box pt={8}>
-                <Text color="brand.accent" fontWeight="bold">
+              <Box pt={6}>
+                <Text color="white" fontWeight="bold">
                   {titulo}
                 </Text>
               </Box>
-              <Box>
-                <Text color="brand.primary" fontWeight="thin">
-                  {descripcion}
-                </Text>
-              </Box>
-              <Flex gap={4} flexDirection="row">
+
+              <Flex gap={2} flexDirection="row">
                 <Box>
-                  <Text color="brand.accent" fontSize="md">
+                  <Text color="brand.accent" fontSize="sm">
                     $ {precio} x {quantity}
                   </Text>
                 </Box>
@@ -49,7 +45,7 @@ const CartItem = ({ data, delFromCart }) => {
             </Flex>
 
             <Flex alignContent="center" alignItems="center" flexDirection="row">
-              <Box pl={4} py={2} maxW="100px">
+              <Box pl={2} py={2} maxW="100px">
                 <Image borderRadius="lg" src={imagen}></Image>
               </Box>
               <Box>

@@ -4,76 +4,58 @@ import {
   Box,
   Button,
   Center,
+  Flex,
   Grid,
   GridItem,
   Heading,
   Image,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import Logo from "../assets/logo.png";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { CiShoppingCart } from "react-icons/ci";
 
 const Home = () => {
   return (
-    <Box>
-      <Center>
-        <Grid
-          py="100px"
-          templateColumns={{
-            sm: "repeat(1,1fr)",
-            md: "repeat(2,1fr)",
-            lg: "repeat(2,1fr)",
-            xl: "repeat(2,1fr)",
-          }}
-          gap={20}
+    <Grid
+      mt={8}
+      templateColumns={{ base: "1fr", lg: "350px 1fr" }}
+      gap={8}
+      alignItems="center"
+    >
+      <Box w={{ base: "120px", sm: "160px", lg: "350px" }} mx="auto">
+        <Image src={Logo} w="100%" h="auto" />
+      </Box>
+      <Flex
+        direction="column"
+        textAlign={{ base: "center", lg: "left" }}
+        justifyContent="center"
+      >
+        <Text
+          fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
+          fontWeight="extrabold"
+          mb={4}
         >
-          <GridItem
-            w={{
-              base: "200px",
-              sm: "200px",
-              md: "260px",
-              lg: "350px",
-              xl: "450px",
-            }}
+          <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+            Bienvenido!
+          </Heading>
+        </Text>
+        <Text as="i" fontSize={{ base: "lg", md: "2xl", lg: "3xl" }} mb={6}>
+          Explora el mundo al aire libre con nosotros: ¡equipando tus aventuras!
+        </Text>
+        <Center>
+          <Button
+            color="white"
+            bg="brand.accent"
+            _hover={{ bg: "brand.primary" }}
+            width={{ base: "140px", lg: "140px" }}
           >
-            <Image src={Logo}></Image>
-          </GridItem>
-          <Center>
-            <GridItem py={{ md: "80px", lg: "100px", xl: "100px" }}>
-              <Text
-                color="gray.900"
-                fontSize={{ base: "24px", md: "40px", lg: "56px" }}
-                fontWeight="extrabold"
-              >
-                <Heading fontSize={{ base: "22px", md: "36px", lg: "42px" }}>
-                  Bienvenido!
-                </Heading>
-              </Text>
-              <Text
-                as="i"
-                color="gray.900"
-                fontSize={{ base: "16px", md: "24px", lg: "36px" }}
-                py="10px"
-              >
-                Explora el mundo al aire libre con nosotros: ¡equipando tus
-                aventuras!
-              </Text>
-              <GridItem py={10}>
-                <Button
-                  color="white"
-                  gap={2}
-                  bg="brand.accent"
-                  _hover={{ bg: "brand.primary" }}
-                >
-                  <AiOutlineShoppingCart fontSize="25px" />
-                  Ver Tienda
-                </Button>
-              </GridItem>
-            </GridItem>
-          </Center>
-        </Grid>
-      </Center>
-    </Box>
+            <CiShoppingCart size="25px" />
+            Ver Tienda
+          </Button>
+        </Center>
+      </Flex>
+    </Grid>
   );
 };
 

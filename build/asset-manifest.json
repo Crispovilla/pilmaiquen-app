@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e4e5604b.css",
-    "main.js": "/static/js/main.c5585cef.js",
+    "main.js": "/static/js/main.d1c367da.js",
     "static/media/logo.png": "/static/media/logo.e5ccc8523ee64d129cc5.png",
     "static/media/lato-all-400-normal.woff": "/static/media/lato-all-400-normal.3dc1eff492ab1f598560.woff",
     "static/media/abril-fatface-all-400-normal.woff": "/static/media/abril-fatface-all-400-normal.327d8bf30c4299561107.woff",
@@ -11,10 +11,10 @@
     "static/media/lato-latin-ext-400-normal.woff2": "/static/media/lato-latin-ext-400-normal.361f3dbb9db6a5980326.woff2",
     "index.html": "/index.html",
     "main.e4e5604b.css.map": "/static/css/main.e4e5604b.css.map",
-    "main.c5585cef.js.map": "/static/js/main.c5585cef.js.map"
+    "main.d1c367da.js.map": "/static/js/main.d1c367da.js.map"
   },
   "entrypoints": [
     "static/css/main.e4e5604b.css",
-    "static/js/main.c5585cef.js"
+    "static/js/main.d1c367da.js"
   ]
 }

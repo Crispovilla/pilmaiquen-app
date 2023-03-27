@@ -8,14 +8,13 @@ import {
   Input,
   Spacer,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase-config.js";
 import { useEffect, useReducer, useState } from "react";
-import { MdShoppingCart, MdOutlineCleaningServices } from "react-icons/md";
-import { FaCashRegister } from "react-icons/fa";
-import { IoWalletSharp } from "react-icons/io5";
+
 import { TYPES } from "../actions/shoppingActions.js";
 import {
   shoppingInitialState,
@@ -23,6 +22,12 @@ import {
 } from "../reducers/shoppingReducer.js";
 import ProductItem from "./ProductItem.jsx";
 import CartItem from "./CartItem.jsx";
+import {
+  CiShoppingCart,
+  CiWallet,
+  CiCoinInsert,
+  CiEraser,
+} from "react-icons/ci";
 
 const Products = () => {
   const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
@@ -83,56 +88,93 @@ const Products = () => {
           xl: "row",
         }}
       >
-        <Flex flexDirection="column">
-          <Box>
-            <Heading>Productos</Heading>
-          </Box>
-          <Flex flexDirection="row">
-            <Box shadow="lg">
-              {results.map((product) => (
-                <ProductItem
-                  key={product.id}
-                  data={product}
-                  addToCart={addToCart}
-                />
-              ))}
+        <VStack>
+          <Box
+            gap={{
+              md: "30px",
+              lg: "40px",
+              xl: "40px",
+            }}
+            display={{
+              base: "block",
+              sm: "block",
+              md: "flex",
+              lg: "flex",
+              xl: "flex",
+            }}
+          >
+            <Box
+              py={{
+                base: "5px",
+                sm: "10px",
+                md: "15px",
+                lg: "20px",
+                xl: "25px",
+              }}
+            >
+              <Heading>Productos</Heading>
             </Box>
-          </Flex>
-        </Flex>
+
+            <Box
+              py={{
+                base: "5px",
+                sm: "10px",
+                md: "15px",
+                lg: "20px",
+                xl: "25px",
+              }}
+            >
+              <Input
+                w={{
+                  base: "170px",
+                  lg: "420px",
+                }}
+                type="text"
+                borderColor="brand.primary"
+                value={buscar}
+                onChange={searcher}
+                placeholder="Buscar..."
+                activeClassName="active"
+                _hover={{ borderColor: "brand.primary" }}
+              />
+            </Box>
+          </Box>
+          <Box
+            display={{
+              base: "block",
+              sm: "block",
+              md: "flex",
+
+              lg: "flex",
+              xl: "flex",
+            }}
+            shadow="lg"
+          >
+            {results.map((product) => (
+              <ProductItem
+                key={product.id}
+                data={product}
+                addToCart={addToCart}
+              />
+            ))}
+          </Box>
+        </VStack>
         <Spacer />
-        <Box w="340px" pb={6} px={4} bg="brand.secondary">
+        <Box w="420px" px={2} bg="brand.secondary">
           <Flex flexDirection="column">
-            <Center>
-              <Box py={4}>
-                <Input
-                  w={{
-                    base: "300px",
-                    lg: "300px",
-                    xl: "300px",
-                  }}
-                  color="brand.primary"
-                  type="text"
-                  borderColor="brand.accent"
-                  value={buscar}
-                  onChange={searcher}
-                  placeholder="Buscar..."
-                  activeClassName="active"
-                  _hover={{ borderColor: "brand.primary" }}
-                />
-              </Box>
-            </Center>
+            <Center></Center>
 
             <Box py={2}>
               <Flex flexDirection="row">
                 <Flex flexDirection="row">
                   <Box px={6} color="brand.accent">
-                    <MdShoppingCart size="30px" />
+                    <CiShoppingCart size="25px" />
                   </Box>
                   <Box px={6} color="brand.primary">
-                    <IoWalletSharp size="30px" />
+                    <CiWallet size="25px" />
                   </Box>
                   <Box px={6} color="brand.primary">
-                    <FaCashRegister size="30px" />
+                    <CiCoinInsert size="25px" />
                   </Box>
                   <Spacer />
                   <Center h="40px">
@@ -141,7 +183,6 @@ const Products = () => {
                   <Button
                     bg="brand.secondary"
                     color="brand.accent"
-                    gap={2}
                     fontWeight="light"
                     _hover={{
                       bg: "brand.secondary",
@@ -149,7 +190,7 @@ const Products = () => {
                     }}
                     onClick={clearCart}
                   >
-                    <MdOutlineCleaningServices size="30px" />
+                    <CiEraser size="30px" />
                   </Button>
                 </Flex>
               </Flex>

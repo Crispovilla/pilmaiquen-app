@@ -10,6 +10,7 @@ import {
   Input,
   Spacer,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import { HiShare } from "react-icons/hi";
 
@@ -50,7 +51,7 @@ const Offers = () => {
   }
   return (
     <Box py={4}>
-      <Flex px={8} py={10}>
+      <Flex p={8}>
         <Box>
           <Heading color="brand.secondary">Ofertas</Heading>
         </Box>
@@ -68,10 +69,6 @@ const Offers = () => {
             activeClassName="active"
           />
         </Box>
-
-        <Link>
-          <ModalCart />
-        </Link>
       </Flex>
 
       <Grid
@@ -91,48 +88,49 @@ const Offers = () => {
             shadow="lg"
             p={8}
           >
-            <Box fontWeight="bold" fontSize="1.2rem">
-              {oferta.titulo}
-            </Box>
-            <hr />
-            <Box pt="20px" h="220px" w="auto">
-              <Image src={oferta.imagen}></Image>
-            </Box>
-            <Box pt={4} color="gray.600">
-              {oferta.descripcion}
-            </Box>
-            <Box pt={4} fontWeight="bold" fontSize="2rem">
-              ${oferta.precio}
-            </Box>
+            <VStack>
+              <Box fontWeight="bold" fontSize="1.2rem">
+                {oferta.titulo}
+              </Box>
+              <hr />
+              <Box pt="20px" h="220px" w="auto">
+                <Image boxSize="200px" src={oferta.imagen}></Image>
+              </Box>
+              <Box pt={4} color="gray.600">
+                {oferta.descripcion}
+              </Box>
+              <Box pt={4} fontWeight="bold" fontSize="2rem">
+                ${oferta.precio}
+              </Box>
 
-            <Box>
-              <Flex gap={2} alignItems="center" textAlign="center" pt="4">
-                <Box>
-                  <Button
-                    bg="brand.accent"
-                    color="brand.secondary"
-                    gap={2}
-                    fontWeight="light"
-                    _hover={{ bg: "brand.primary" }}
-                  >
-                    <HiShare />
-                    Compartir
-                  </Button>
-                </Box>
-                <Box>
-                  <Button
-                    bg="brand.accent"
-                    fontWeight="light"
-                    color="brand.secondary"
-                    _hover={{ bg: "brand.primary" }}
-                  >
-                    {/*      <MdShoppingCart /> */}
-                    Añadir
-                  </Button>
-                </Box>
-              </Flex>
-              <Flex></Flex>
-            </Box>
+              <Box>
+                <Flex gap={2} alignItems="center" textAlign="center" pt="4">
+                  <Box>
+                    <Button
+                      bg="brand.accent"
+                      color="brand.secondary"
+                      gap={2}
+                      fontWeight="light"
+                      _hover={{ bg: "brand.primary" }}
+                    >
+                      <HiShare />
+                      Compartir
+                    </Button>
+                  </Box>
+                  <Box>
+                    <Button
+                      bg="brand.accent"
+                      fontWeight="light"
+                      color="brand.secondary"
+                      _hover={{ bg: "brand.primary" }}
+                    >
+                      Añadir
+                    </Button>
+                  </Box>
+                </Flex>
+                <Flex></Flex>
+              </Box>
+            </VStack>
           </GridItem>
         ))}
       </Grid>

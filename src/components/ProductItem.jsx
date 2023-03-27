@@ -14,13 +14,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { MdShoppingCart } from "react-icons/md";
+import { CiShoppingCart } from "react-icons/ci";
 
 const ProductItem = ({ data, addToCart }) => {
   let { id, titulo, imagen, descripcion, precio, cantidad } = data;
   return (
     <>
-      <Flex flexDirection="row">
+      <Flex flexDirection="column">
         <Box
           m={2}
           pb={4}
@@ -30,16 +30,15 @@ const ProductItem = ({ data, addToCart }) => {
           alignContent="center"
           textAlign="center"
           maxW="xs"
-          pt={4}
           shadow="lg"
         >
-          <Box pb="20px" fontWeight="bold" fontSize="1.2rem">
+          <Box py={4} fontWeight="bold" fontSize="1.2rem">
             {titulo}
           </Box>
           <Divider />
           <Center>
             <Box pt="20px" w="220px" h="auto">
-              <Image src={imagen}></Image>
+              <Image boxSize="200px" src={imagen}></Image>
             </Box>
           </Center>
 
@@ -52,12 +51,10 @@ const ProductItem = ({ data, addToCart }) => {
           <Button
             bg="brand.accent"
             color="brand.secondary"
-            gap={2}
-            fontWeight="light"
             _hover={{ bg: "brand.primary" }}
             onClick={() => addToCart(id)}
           >
-            <MdShoppingCart />
+            <CiShoppingCart />
           </Button>
         </Box>
       </Flex>
